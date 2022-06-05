@@ -1,0 +1,12 @@
+<div class="statistics-map">
+    <div class="d-flex flex-row">
+        <label for="country" class="mx-2">Show data for: </label>
+        <ng-select id="country" [items]="countries" [(ngModel)]="selectedCountry" class="w-50" (change)="getCountryData()">
+            <ng-option *ngFor="let country of countries" [value]="country">{{country}}</ng-option>
+        </ng-select>
+    </div>
+
+    <div class="w-100 h-100">
+        <google-chart [type]="chartType" [data]="chartData" [options]="options" class="w-100 h-100"></google-chart>
+    </div>
+</div>
